@@ -1,11 +1,20 @@
 package inheritance_polimorfizm;
 
-public class Circle1 extends Shape {
+public  class Circle1 extends Shape {
     private double radius;
 
     public Circle1() {
         super();
         radius = 1.f;
+    }
+    @Override
+    public double getPerimeter(){
+        return 2*java.lang.Math.PI*radius;
+    }
+    @Override
+    public boolean isInside(double x, double y){
+        if(java.lang.Math.pow(x*x+y*y,0.5)<radius)return true;
+        return false;
     }
 
     public Circle1(double radius) {
@@ -22,9 +31,9 @@ public class Circle1 extends Shape {
     public String toString() {
         return "A Circle with radius " + radius + ", which is a subclass of "+super.toString();
     }
-
+    @Override
     public double getArea() {
-        return Math.PI * radius * radius;
+        return java.lang.Math.PI * radius * radius;
     }
 
     public double getRadius() {

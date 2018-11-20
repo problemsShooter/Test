@@ -24,9 +24,18 @@ public class Rectangle extends Shape {
     public String toString() {
         return "A Rectangle with width = " + width + " and length = " + length + ", which is a subclass of " + super.toString();
     }
-
+    @Override
     public double getPerimeter() {
         return 2 * (length + width);
+    }
+    @Override
+    public double getArea(){
+        return length*width;
+    }
+    @Override
+    public boolean isInside(double x, double y){
+        if(java.lang.Math.abs(x)<=width/2 && java.lang.Math.abs(y)<=length/2)return true;
+        return false;
     }
 
     public double getWidth() {

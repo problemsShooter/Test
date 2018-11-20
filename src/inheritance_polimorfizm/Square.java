@@ -19,16 +19,17 @@ public class Square extends Rectangle {
 
     @Override
     public void setLength(double length) {
-        this.length = length;
-        super.setWidth(length);
+        setWidth(length);
     }
+
     @Override
-    public double getPerimeter(){
+    public double getPerimeter() {
         return super.getPerimeter();
     }
+
     @Override
-    public void setWidth(double length) {
-        this.length = length;
-        super.setLength(length);
+    public void setWidth(double width) {
+        this.width = width;
+        this.length = width;
     }
 }

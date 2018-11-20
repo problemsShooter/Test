@@ -19,7 +19,7 @@ public class Circle {
     }
 
     public double getArea() {
-        return Math.PI * radius * radius;
+        return java.lang.Math.PI * radius * radius;
     }
 
     public double getRadius() {
