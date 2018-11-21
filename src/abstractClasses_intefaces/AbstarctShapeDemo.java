@@ -15,5 +15,4 @@ public class AbstarctShapeDemo {
         System.out.println("Area of circle " + circle.getArea());
     }
 
-
 }

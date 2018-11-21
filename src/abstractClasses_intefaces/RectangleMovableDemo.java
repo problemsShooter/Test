@@ -22,5 +22,4 @@ public class RectangleMovableDemo {
         System.out.println(topLeft);
         System.out.println(bottomRight);
     }
-
 }

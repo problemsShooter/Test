@@ -13,8 +13,7 @@ public  class Circle1 extends Shape {
     }
     @Override
     public boolean isInside(double x, double y){
-        if(java.lang.Math.pow(x*x+y*y,0.5)<radius)return true;
-        return false;
+        return java.lang.Math.pow(x*x+y*y,0.5)<radius;
     }
 
     public Circle1(double radius) {

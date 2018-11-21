@@ -13,9 +13,13 @@ public abstract class Shape {
         this.colour = colour;
         this.filled = filled;
     }
+
     public abstract double getArea();
+
     public abstract double getPerimeter();
+
     public abstract boolean isInside(double x, double y);
+
     @Override
     public String toString() {
         String string = "A Shape with the colour of " + colour + " and ";

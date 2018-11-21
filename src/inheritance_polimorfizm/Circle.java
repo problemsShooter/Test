@@ -9,6 +9,8 @@ public class Circle {
         colour = Colour.WHITE;
     }
 
+
+
     public Circle(double radius) {
         this.radius = radius;
     }
