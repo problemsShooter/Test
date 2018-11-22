@@ -14,13 +14,15 @@ public class ArrayListDemo {
         list.add(1, "1,5");
         list.add(4, "3,5");
         list.remove(3);
+
         Collections.sort(list);
         Collections.reverse(list);
         for (String list1 : list) {
             System.out.println(list1);
         }
 
-
+        list.set(2,"This is string");
+        System.out.println(list);
     }
 
 }
