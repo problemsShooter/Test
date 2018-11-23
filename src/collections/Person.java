@@ -15,7 +15,6 @@ public class Person implements Comparable<Person>, Comparator<Person> {
     @Override
     public int compareTo(Person person) {
         return age - person.age;
-        //return person.age.compareTo(this.age);
     }
 
     public static boolean isEquel(List<Person> list1, List<Person> list2) {
@@ -23,14 +22,9 @@ public class Person implements Comparable<Person>, Comparator<Person> {
     }
 
     public static List<Person> getUniqPerson(List<Person> persons) {
-        //HashSet<Person> personHashSet = new HashSet<>(persons);
-        for (int i = 0; i < persons.size(); i++) {
-            for (int j = 0; j < persons.size() - 1; j++) {
-                if (persons.get(j).compare(persons.get(j),persons.get(j + 1)) == 0)
-                    persons.remove(j + 1);
-            }
-        }
-        return persons;
+        TreeSet<Person> personTreeSet = new TreeSet<>(persons);
+        List<Person> newList = new ArrayList<>(personTreeSet);
+        return newList;
     }
 
     @Override

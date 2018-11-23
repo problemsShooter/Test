@@ -7,6 +7,11 @@ public class HashSetDemo {
 
     public static void main(String[] args) {
         HashSet<String> hset = new HashSet<>();
+
+        //LinkedList<Integer> lnk = new LinkedList<>();
+        java.util.LinkedList<Integer> list = new java.util.LinkedList<>();
+
+
         hset.add("Orange");
         hset.add("Grapes");
         hset.add("Apple");

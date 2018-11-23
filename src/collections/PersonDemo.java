@@ -46,18 +46,18 @@ public class PersonDemo {
         for (int i = 0; i < 15; i++) {
             persons2.add(new Person(i, "Elena" + i));
         }
-        System.out.println("list persons equels list persons? " + Person.isEquel(persons, persons));
-        System.out.println("list persons equels list persons2? " + Person.isEquel(persons, persons2));
-
-        //persons.clone(persons);
+        System.out.println("list persons equally list persons? " + Person.isEquel(persons, persons));
+        System.out.println("list persons equally list persons2? " + Person.isEquel(persons, persons2));
 
         for (int i = 0; i < 6; i++) {
             persons.add(persons.get(i));
         }
 
-        //System.out.println(persons.get(0).compare(persons.get(3),persons.get(1)));
+        System.out.println(" person0 equally person0? " + persons.get(0).compare(persons.get(0),persons.get(0)));
+        System.out.println(" person0 equally person1? " + persons.get(0).compare(persons.get(0),persons.get(1)));
+
         System.out.println(persons);
-        Person.getUniqPerson(persons);
-        System.out.println(persons);
+        persons = Person.getUniqPerson(persons);
+        System.out.println("Got unique list " + persons);
     }
 }
