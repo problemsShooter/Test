@@ -1,6 +1,6 @@
 package com.company;
 
-import java1.fundamental.*;
+import java_fundamental.*;
 
 import java.util.Scanner;
 
@@ -34,7 +34,7 @@ public class Main {
 
         System.out.println("Task 4:");
         Practice4 p4 = new Practice4("Число символов в строке равно");
-        System.out.println("Число символов в строке равно: "+p4.countSymbols());
+        System.out.println("Число символов в строке равно: " + p4.countSymbols());
         System.out.println("Task 5:");
         Practice5TowersOfHanoi towersOfHanoi = new Practice5TowersOfHanoi();
         System.out.print("Choose number of discs: ");
