@@ -18,18 +18,26 @@ public class Person implements Comparable<Person>, Comparator<Person> {
         //return person.age.compareTo(this.age);
     }
 
-    public static boolean isEquel(List<Person> list1, List<Person> list2){
+    public static boolean isEquel(List<Person> list1, List<Person> list2) {
         return list1.containsAll(list2);
     }
 
-    public static List<Person> getUniqePerson(List<Person> persons) {
-        HashSet<Person> personHashSet = new HashSet<>(persons);
-        return (List) personHashSet;
+    public static List<Person> getUniqPerson(List<Person> persons) {
+        //HashSet<Person> personHashSet = new HashSet<>(persons);
+        for (int i = 0; i < persons.size(); i++) {
+            for (int j = 0; j < persons.size() - 1; j++) {
+                if (persons.get(j).compare(persons.get(j),persons.get(j + 1)) == 0)
+                    persons.remove(j + 1);
+            }
+        }
+        return persons;
     }
+
     @Override
-    public String toString(){
+    public String toString() {
         return name;
     }
+
     @Override
     public int compare(Person person1, Person person2) {
         if (person1.name.equals(person2.name)) {
