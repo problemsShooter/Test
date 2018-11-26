@@ -8,7 +8,5 @@ public class CustomExceptionDemo {
         catch (CustomException e){
             exception.print();
         }
-
-
     }
 }

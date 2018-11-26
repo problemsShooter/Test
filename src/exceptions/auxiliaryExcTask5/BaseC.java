@@ -6,6 +6,7 @@ public class BaseC extends BaseB{
         try{
             throw new Exception3("exception3");
         }catch(Exception3 e){
+            System.out.print("we are in BaseC ");
             e.printInfo();
         }
     }
