@@ -7,8 +7,7 @@ public class Practice1 {
 
     public static void main(String[] args) {
         final String DATA = "Word cAT DATA A site Java tExt";
-        StringBuilder str = new StringBuilder(DATA);
-        System.out.println(str);
+        System.out.println(DATA);
         Pattern p = Pattern.compile("\\b[A-Z]\\w*\\b");
         Matcher m = p.matcher(DATA);
         while (m.find()) {
