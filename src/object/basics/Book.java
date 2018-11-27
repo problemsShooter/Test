@@ -15,4 +15,8 @@ public class Book {
     public void showInfo(){
         System.out.printf("Book \"%s\" have author %s and price is %.2f\n", title, author.getFullName(), price);
     }
+
+    public double getPrice() {
+        return price;
+    }
 }
