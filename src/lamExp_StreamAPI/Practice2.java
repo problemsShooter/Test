@@ -12,7 +12,6 @@ import java.util.stream.Collectors;
 public class Practice2 {
     public static void main(String[] args) {
         List<Book> books = Arrays.asList(
-
                 new Book("B", new Author("AA", "BB"), 450),
                 new Book("C", new Author("AA", "BC"), 2000.5),
                 new Book("D", new Author("DD", "Ab"), 499),
@@ -33,14 +32,15 @@ public class Practice2 {
             System.out.println("we haven't books");
         }
         //task2
+        //for(int i = 0; i<books.size();i++)
         System.out.println("task2");
-        String authorBooks = "";
-        authorBooks = books.stream().
-                filter(a -> books.get(0).getAuthor().isEquals(a.getAuthor())).
-                map(Book::getTitle).peek(a -> Practice2.concat(authorBooks, a));
-        //.forEach(a->{System.out.print(a+" ");});
-        //.collect(Collectors.toList());
+        int NUMBER_AUTHOR = 0;
+        String authorBooks = books.stream().
+                filter(a -> books.get(NUMBER_AUTHOR).getAuthor().isEquals(a.getAuthor())).
+                map(Book::getTitle).collect(Collectors.joining(" "));
         System.out.println(authorBooks);
+
+
         //task3
         System.out.println("\ntask3");
         List<Book> sortedBooks = books.stream()
@@ -55,10 +55,6 @@ public class Practice2 {
         double totalPrice = books.stream().
                 map(Book::getPrice).mapToDouble(Double::doubleValue).sum();
         System.out.println("TotalPrice " + totalPrice);
-    }
-
-    private static String concat(String str1, String str2) {
-        return str1 + " " + str2;
     }
 
     public static class Compare implements Comparator<Book> {

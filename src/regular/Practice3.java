@@ -1,10 +1,8 @@
 package regular;
 
 public class Practice3 {
-    //It does'n work
-    //        Pattern p = Pattern.compile("(\\b\\w\\b)");
-//        Matcher m = p.matcher(STR);
-//        while(m.find()){
-//            System.out.println(m.group()+" ");
-//        }System.out.println();
+    public static void main(String[] args) {
+        String str = "  Removing        Extra Spaces       Between Words in  the             text  ";
+        System.out.print(str.replaceAll("\\s+"," ").replaceAll(" (?<q>.*)","${q}").replaceAll("(?<q>.*) ","${q}"));System.out.print(". Checked");
+    }
 }
