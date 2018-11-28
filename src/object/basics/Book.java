@@ -16,6 +16,19 @@ public class Book {
         System.out.printf("Book \"%s\" have author %s and price is %.2f\n", title, author.getFullName(), price);
     }
 
+    @Override
+    public String toString() {
+        return author.getLastName()+" "+author.getFirstName();
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
     public double getPrice() {
         return price;
     }

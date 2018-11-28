@@ -35,12 +35,11 @@ public class Practice2 {
         //task2
         System.out.println("task2");
         String authorBooks = "";
-        authorBooks = books.stream().
-                filter(a -> books.get(0).getAuthor().isEquals(a.getAuthor())).
-                map(Book::getTitle).peek(a -> Practice2.concat(authorBooks, a));
-        //.forEach(a->{System.out.print(a+" ");});
-        //.collect(Collectors.toList());
-        System.out.println(authorBooks);
+        books.stream().
+                filter(a->books.get(0).getAuthor().isEquals(a.getAuthor())).
+                map(Book::getTitle).forEach(a->{System.out.print(a+" ");});
+                //.collect(Collectors.toList());
+        //System.out.println(authorBooks);
         //task3
         System.out.println("\ntask3");
         List<Book> sortedBooks = books.stream()
@@ -55,10 +54,6 @@ public class Practice2 {
         double totalPrice = books.stream().
                 map(Book::getPrice).mapToDouble(Double::doubleValue).sum();
         System.out.println("TotalPrice " + totalPrice);
-    }
-
-    private static String concat(String str1, String str2) {
-        return str1 + " " + str2;
     }
 
     public static class Compare implements Comparator<Book> {
