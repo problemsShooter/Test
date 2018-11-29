@@ -32,26 +32,22 @@ public class Practice2 {
             System.out.println("we haven't books");
         }
         //task2
-        //for(int i = 0; i<books.size();i++)
-        System.out.println("task2");
+        System.out.println("\ntask2");
         int NUMBER_AUTHOR = 0;
         String authorBooks = books.stream().
                 filter(a -> books.get(NUMBER_AUTHOR).getAuthor().isEquals(a.getAuthor())).
                 map(Book::getTitle).collect(Collectors.joining(" "));
         System.out.println(authorBooks);
 
-
         //task3
         System.out.println("\ntask3");
         List<Book> sortedBooks = books.stream()
                 .sorted(new Compare())
                 .collect(Collectors.toList());
-        //authorBooks = b.st
         System.out.println(sortedBooks);
 
-
         //task4
-        System.out.println("task4");
+        System.out.println("\ntask4");
         double totalPrice = books.stream().
                 map(Book::getPrice).mapToDouble(Double::doubleValue).sum();
         System.out.println("TotalPrice " + totalPrice);

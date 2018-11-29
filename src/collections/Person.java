@@ -13,44 +13,25 @@ public class Person implements Comparable<Person> {
     }
 
     @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Person) {
+            Person person = (Person) obj;
+            if (age.equals(person.age) && name.equals(person.name) )
+                return true;
+            else return false;
+        }
+        return false;
+
+    }
+
+    @Override
     public int compareTo(Person person) {
         return age - person.age;
     }
 
-    public static boolean isEqual(List<Person> list1, List<Person> list2) {
-        if (list1.size() != list2.size()) return false;
-        else {
-            Compare compare = new Compare();
-            bubbleSort(list1);
-            bubbleSort(list2);
-            for(int i = 0; i< list1.size(); i++){
-                if(compare.compare(list1.get(i),list2.get(i))!=0)return false;
-            }
-        }
-        return true;
-    }
-
-    public static void bubbleSort(List<Person> list) {
-        for (int i = 1; i < list.size(); i++) {
-            boolean var = true;
-            for (int j = 0; j < list.size() - i; j++) {
-                if (list.get(j).compareTo(list.get(j + 1)) > 0) {
-                    Person person = new Person(list.get(j).getAge(), list.get(j).getName());
-                    list.set(j, list.get(j + 1));
-                    list.set(j + 1, person);
-                    var = false;
-                }
-            }
-            if (var) {
-                return;
-            }
-        }
-    }
-
-    public static List<Person> getUniquePerson(List<Person> persons) {
+    public static List<Person> getUniquePersons(List<Person> persons) {
         TreeSet<Person> personTreeSet = new TreeSet<>(persons);
-        List<Person> newList = new ArrayList<>(personTreeSet);
-        return newList;
+        return new ArrayList<>(personTreeSet);
     }
 
     @Override

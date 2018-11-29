@@ -23,16 +23,8 @@ public class Practice1 {
 
         //task1
          System.out.println("Task1");
-        Workable workable = new Workable() {
-            @Override
-            public boolean isCalculate(Person person) {
-                if (person.getAge() >= 20 && person.getAge() <= 30)
-                    return true;
-                else return false;
-            }
-        };
         List<String> workableNames = persons.stream().
-                filter(workable::isCalculate).
+                        filter(a->a.getAge()>=20 && a.getAge()<=30).
                 map(Person::getName).
                 collect(Collectors.toList());
         workableNames.forEach(System.out::println);
@@ -43,6 +35,7 @@ public class Practice1 {
                 map(Person::getName).
                 collect(Collectors.toSet());
         uniquePerson.forEach(System.out::println);
+
 //        //task3
         System.out.println("\nTask3");
         List<String> upperNames = new ArrayList<>();
@@ -50,6 +43,7 @@ public class Practice1 {
                 map(Person::getName).
                 forEach(a -> upperNames.add(a.toUpperCase()));
         upperNames.forEach(System.out::println);
+
         //task4
         System.out.println("\nTask4");
         List<String> sortedNames = new ArrayList<>();
